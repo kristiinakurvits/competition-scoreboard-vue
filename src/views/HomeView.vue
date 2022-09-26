@@ -2,7 +2,7 @@
   <div class="scoreboard">
 
     <h2 class="heading">1500m</h2>
-    <table class="table table-hover">
+    <table class="table table-hover align-middle" >
       <thead class="thead-light">
       <tr>
         <th scope="col">Rank</th>
@@ -14,10 +14,10 @@
       </thead>
       <tbody>
       <tr v-for="result in results">
-        <th scope="row">{{ result.rank }}</th>
+        <td>{{ result.rank }}</td>
         <td>{{ result.country }} <span class="flag-icon flag-icon-ad"></span></td>
         <td>{{ result.athlete }}</td>
-        <td>{{ result.time }}</td>
+        <td class="text-truncate" style="max-width: 80px">{{ result.time }}</td>
         <td>{{ result.points }}</td>
       </tr>
       </tbody>
@@ -49,12 +49,17 @@ export default {
 .scoreboard thead{
   background-color: lightgray;
 }
-.scoreboard table{
+.scoreboard{
   margin: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+/*  ei suutnud tuvastada õiget fonti*/
 }
 .scoreboard .heading{
-  margin: 20px;
   text-align: left;
+}
+.scoreboard .table{
+  text-align: left;
+
 }
 
 </style>
